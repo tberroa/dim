@@ -1,2 +1,2 @@
-# dim
+# DIM
 Digital Information Management

@@ -1,16 +1,20 @@
 {
   "name": "DIM",
   "version": "0.1.0",
-  "main": "main.js",
   "description": "Digital Information Management App",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "electron ."
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tberroa"
+    "url": "https://github.com/tberroa/dim"
   },
-  "license": "X",
+  "license": "MIT",
   "dependencies": {
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
+    "electron-prebuilt-compile": "^1.4.15",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }

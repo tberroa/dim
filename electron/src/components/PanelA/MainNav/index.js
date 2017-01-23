@@ -4,7 +4,9 @@ import Section from "./Section/index";
 export default class MainNav extends React.Component {
   render() {
     var style = {
-      display: block;
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
     };
 
     return (

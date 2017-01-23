@@ -6,7 +6,13 @@ let mainWindow = null;
 
 // Function used to create the main window for the application.
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+  });
+
+  // Disable the menu bar.
+  mainWindow.setMenu(null);
 
   // Load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/scenes/Home/index.html`);

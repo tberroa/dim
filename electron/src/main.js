@@ -15,7 +15,7 @@ function createWindow () {
   mainWindow.setMenu(null);
 
   // Load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/scenes/Home/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Dereference the window object when the window is closed.
   mainWindow.on("closed", () => {

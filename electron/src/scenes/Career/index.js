@@ -1,19 +1,20 @@
 import React from "react";
+import FeaturesPanel from "../../components/FeaturesPanel/index";
 
-export default class Home extends React.Component {
+export default class Career extends React.Component {
   render() {
     var containerStyle = {
       width: "100%",
       height: "100%",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center"
+      justifyContent: "flex-end"
     };
 
     return (
       <div style={containerStyle}>
-        <h1>Home Content</h1>
+        <h1>Career Content</h1>
+        <FeaturesPanel />
       </div>
     );
   }

@@ -2,7 +2,7 @@
   "name": "DIM",
   "version": "0.1.0",
   "description": "Digital Information Management App",
-  "main": "src/app.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron ."
   },

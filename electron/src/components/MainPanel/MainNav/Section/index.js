@@ -16,10 +16,11 @@ export default class Section extends React.Component {
       margin: "auto"
     };
 
-    var imgPath = "/home/tberroa/dim/electron/src/components/PanelA/MainNav/Section/assets/" + this.props.section + ".png";
+    var rootPath = "/home/tberroa/dim/electron/src/components/MainPanel/MainNav/Section/";
+    var imgPath = rootPath + "assets/" + this.props.section + ".png";
 
     return (
-      <div style={containerStyle}>
+      <div style={containerStyle} onClick={this.props.onClick.bind(this)}>
         <img src={imgPath} alt ="" style={imgStyle} />
         {this.props.section}
       </div>

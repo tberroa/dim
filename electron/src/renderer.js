@@ -15,7 +15,7 @@ const MAIN_CONTAINER_STYLE = {
   flex: "0 0 auto",
   width: "150px",
   height: "100%",
-  backgroundColor: "#8E79A3",
+  backgroundColor: "#643689",
   overflow: "auto"
 };
 

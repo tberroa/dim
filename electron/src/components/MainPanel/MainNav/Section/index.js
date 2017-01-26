@@ -3,15 +3,22 @@ import React from "react";
 export default class Section extends React.Component {
   render() {
     const CONTAINER_STYLE = {
-      width: "100px",
-      height: "100px",
+      width: "80px",
+      height: "80px",
       flex: "0 0 auto",
-      textAlign: "center"
+      textAlign: "center",
+      backgroundColor: "#8D66AB",
+      borderStyle: "ridge",
+      borderColor: "#5C2A83",
+      borderRadius: "50%",
+      fontSize: "12px",
+      padding: "5px",
+      margin: "5px"
     };
 
     const IMG_STYLE = {
-      width: "75px",
-      height: "75px",
+      width: "60px",
+      height: "60px",
       display: "block",
       margin: "auto"
     };

@@ -2,26 +2,26 @@ import React from "react";
 
 export default class Section extends React.Component {
   render() {
-    var containerStyle = {
+    const CONTAINER_STYLE = {
       width: "100px",
       height: "100px",
-      flexShrink: "0",
+      flex: "0 0 auto",
       textAlign: "center"
     };
 
-    var imgStyle = {
+    const IMG_STYLE = {
       width: "75px",
       height: "75px",
       display: "block",
       margin: "auto"
     };
 
-    var rootPath = "/home/tberroa/dim/electron/src/components/MainPanel/MainNav/Section/";
-    var imgPath = rootPath + "assets/" + this.props.section + ".png";
+    const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/MainNav/Section/";
+    const IMG_PATH = ROOT_PATH + "assets/" + this.props.section + ".png";
 
     return (
-      <div style={containerStyle} onClick={this.props.onClick.bind(this)}>
-        <img src={imgPath} alt ="" style={imgStyle} />
+      <div style={CONTAINER_STYLE} onClick={this.props.onClick.bind(this)}>
+        <img src={IMG_PATH} alt ="" style={IMG_STYLE} />
         {this.props.section}
       </div>
     );

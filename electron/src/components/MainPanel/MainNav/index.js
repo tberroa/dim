@@ -3,14 +3,15 @@ import Section from "./Section/index";
 
 export default class MainNav extends React.Component {
   render() {
-    var containerStyle = {
+    const CONTAINER_STYLE = {
       display: "flex",
       flexDirection: "column",
       alignItems: "center"
     };
 
     return (
-      <div style={containerStyle}>
+      <div style={CONTAINER_STYLE}>
+        <Section section="home" onClick={this.props.onClick} />
         <Section section="career" onClick={this.props.onClick} />
         <Section section="finance" onClick={this.props.onClick} />
         <Section section="health" onClick={this.props.onClick} />

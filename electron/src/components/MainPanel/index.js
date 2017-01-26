@@ -3,18 +3,16 @@ import MainNav from "./MainNav/index";
 
 export default class MainPanel extends React.Component {
   render() {
-    var containerStyle = {
+    const CONTAINER_STYLE = {
       width: "100%",
       height: "100%",
       display: "flex",
       flexDirection: "column",
-      alignItems: "center",
-      overflow: "auto"
+      alignItems: "center"
     };
 
     return (
-      <div style={containerStyle}>
-        <h5>Thomas Berroa</h5>
+      <div style={CONTAINER_STYLE}>
         <MainNav onClick={this.props.onNavClick} />
       </div>
     );

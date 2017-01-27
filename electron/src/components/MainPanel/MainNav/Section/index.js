@@ -3,15 +3,12 @@ import React from "react";
 export default class Section extends React.Component {
   render() {
     const CONTAINER_STYLE = {
+      flex: "0 0 auto",
       width: "80px",
       height: "80px",
-      flex: "0 0 auto",
+      backgroundColor: "#DAC3E0",
+      borderRadius: "10%",
       textAlign: "center",
-      backgroundColor: "#8D66AB",
-      borderStyle: "ridge",
-      borderColor: "#5C2A83",
-      borderRadius: "50%",
-      fontSize: "12px",
       padding: "5px",
       margin: "5px"
     };
@@ -23,13 +20,18 @@ export default class Section extends React.Component {
       margin: "auto"
     };
 
+    const TEXT_STYLE = {
+      fontSize: "12px",
+      color: "#393958"
+    };
+
     const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/MainNav/Section/";
     const IMG_PATH = ROOT_PATH + "assets/" + this.props.section + ".png";
 
     return (
       <div style={CONTAINER_STYLE} onClick={this.props.onClick.bind(this)}>
         <img src={IMG_PATH} alt ="" style={IMG_STYLE} />
-        {this.props.section}
+        <div style={TEXT_STYLE}>{this.props.section}</div>
       </div>
     );
   }

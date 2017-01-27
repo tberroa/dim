@@ -24,7 +24,7 @@ export default class Section extends React.Component {
         <div style={PANEL_CONTAINER_STYLE}>
           <h1>{this.props.section} Panel Area</h1>
         </div>
-        <FeaturesPanel features={this.props.features}/>
+        <FeaturesPanel features={this.props.features} />
       </div>
     );
   }

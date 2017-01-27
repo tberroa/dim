@@ -1,11 +1,12 @@
 import React from "react";
+import Feature from "./Feature/index";
 
 export default class FeaturesPanel extends React.Component {
   render() {
     const CONTAINER_STYLE = {
       width: "100%",
-      height: "100px",
-      backgroundColor: "red",
+      height: "50px",
+      backgroundColor: "#474C78",
       display: "flex",
       flexDirection: "row",
       justfiyContent: "center",
@@ -14,15 +15,8 @@ export default class FeaturesPanel extends React.Component {
       overflow: "auto"
     };
 
-    const FEATURE_STYLE = {
-      maxWidth: "150px",
-      textAlign: "center",
-      margin: "auto",
-      padding: "5px"
-    };
-
     const FEATURES = this.props.features.map((feature) => {
-      return (<div style={FEATURE_STYLE}>{feature}</div>);
+      return (<Feature name={feature.name} state={feature.state} />);
     });
 
     return (

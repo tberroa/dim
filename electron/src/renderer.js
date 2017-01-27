@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import MainPanel from "./components/MainPanel/index";
 import Home from "./scenes/Home/index";
 import Section from "./scenes/Section/index";
+import FEATURE_NAMES from "./constants/features";
+import Settings from "./services/settings";
 
 const APP_CONTAINER_STYLE = {
   width: "100%",
@@ -15,90 +17,56 @@ const MAIN_CONTAINER_STYLE = {
   flex: "0 0 auto",
   width: "150px",
   height: "100%",
-  backgroundColor: "#643689",
+  backgroundColor: "#393958",
   overflow: "auto"
 };
 
 const CONTENT_CONTAINER_STYLE = {
   flex: "1 1 auto",
   height: "100%",
-  backgroundColor: "#F2EFEF",
+  backgroundColor: "#5B5681",
   overflow: "hidden"
 };
 
-const CAREER_FEATURES = [
-  "Job Applications",
-  "Portfolio",
-  "Work History",
-  "References",
-  "Documents"
-];
-
-const FINANCE_FEATURES = [
-  "Balances",
-  "Transactions",
-  "Budgets",
-  "Spending",
-  "Investments",
-  "Loans",
-  "Bills",
-  "Savings",
-  "Documents"
-];
-
-const HEALTH_FEATURES = [
-  "Weight Progress",
-  "Exercise Plan",
-  "Nutrition Plan",
-  "Sleep Pattern",
-  "Water Intake",
-  "Groceries",
-  "Recipes",
-  "Steps Taken"
-];
-
-const MEDICAL_FEATURES = [
-  "Appointments",
-  "Medication",
-  "Health Conditions",
-  "Insurance Details",
-  "Reminders",
-  "Documents"
-];
-
-const SCHOOL_FEATURES = [
-  "Schedule",
-  "Classes",
-  "Deadlines",
-  "Grades",
-  "Documents"
-];
-
+// Function used to handle the user clicking on one the main navigation section buttons.
 function navClickHandler(){
+  // Home was clicked, nothing special needs to happen, simply render the home page component.
   if (this.props.section == "home"){
     ReactDOM.render(<Home />, document.getElementById("content-container"));
     return;
   }
 
-  let features = null;
+  // A non home button was clicked, get the feature names.
+  let featureNames = null;
   if (this.props.section == "career"){
-    features = CAREER_FEATURES;
+    featureNames = FEATURE_NAMES.career;
   } else if (this.props.section == "finance"){
-    features = FINANCE_FEATURES;
+    featureNames = FEATURE_NAMES.finance;
   } else if (this.props.section == "health"){
-    features = HEALTH_FEATURES;
+    featureNames = FEATURE_NAMES.health;
   } else if (this.props.section == "medical"){
-    features = MEDICAL_FEATURES;
+    featureNames = FEATURE_NAMES.medical;
   } else if (this.props.section == "school"){
-    features = SCHOOL_FEATURES;
+    featureNames = FEATURE_NAMES.school;
   }
 
+  // The state property represents whether a feature is being used or not by the user.
+  let featureStates = Settings.getFeatureStates(this.props.section);
+
+  // Package the name and state into a dictionary object for each feature.
+  let features = new Array(featureNames.length);
+  for (let i = 0; i < featureNames.length; i++){
+    features[i] = {name: featureNames[i], state: featureStates[i]};
+  }
+
+  // Render the corresponding section page, pass the feature information down the components.
   ReactDOM.render(
     <Section section={this.props.section} features={features} />,
     document.getElementById("content-container")
   );
 }
 
+// Render the app.
 ReactDOM.render(
   <div style={APP_CONTAINER_STYLE}>
     <div id="main-container" style={MAIN_CONTAINER_STYLE}>

@@ -4,8 +4,8 @@ export default class Section extends React.Component {
   render() {
     const CONTAINER_STYLE = {
       flex: "0 0 auto",
-      width: "80px",
-      height: "80px",
+      width: "75px",
+      height: "75px",
       backgroundColor: "#DAC3E0",
       borderRadius: "10%",
       textAlign: "center",
@@ -14,14 +14,14 @@ export default class Section extends React.Component {
     };
 
     const IMG_STYLE = {
-      width: "60px",
-      height: "60px",
+      width: "50px",
+      height: "50px",
       display: "block",
       margin: "auto"
     };
 
     const TEXT_STYLE = {
-      fontSize: "12px",
+      fontSize: "14px",
       color: "#393958"
     };
 

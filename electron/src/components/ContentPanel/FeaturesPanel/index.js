@@ -4,12 +4,13 @@ import Feature from "./Feature/index";
 export default class FeaturesPanel extends React.Component {
   render() {
     const CONTAINER_STYLE = {
+      flex: "0 1 auto",
       width: "100%",
       height: "50px",
       backgroundColor: "#474C78",
       display: "flex",
       flexDirection: "row",
-      justfiyContent: "center",
+      justifyContent: "center",
       alignItems: "center",
       padding: "5px",
       overflow: "auto"

@@ -3,19 +3,17 @@ const STYLE = {
     width: "100%",
     height: "100%",
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    overflow: "hidden"
   },
   mainContainer: {
     flex: "0 0 auto",
-    width: "125px",
     height: "100%",
-    backgroundColor: "#393958",
-    overflow: "auto"
+    overflow: "hidden"
   },
-  contentContainer: {
+  sectionContainer: {
     flex: "1 1 auto",
     height: "100%",
-    backgroundColor: "#5B5681",
     overflow: "hidden"
   }
 };

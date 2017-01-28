@@ -1,7 +1,7 @@
 import React from "react";
 import STYLE from "./style";
 
-export default class InfoPanel extends React.Component {
+export default class PanelArea extends React.Component {
   render() {
     return (
       <div style={STYLE.containerStyle}>

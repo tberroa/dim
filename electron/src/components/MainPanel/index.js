@@ -1,19 +1,17 @@
 import React from "react";
-import MainNav from "./MainNav/index";
+import Section from "./Section/index";
+import STYLE from "./style";
 
 export default class MainPanel extends React.Component {
   render() {
-    const CONTAINER_STYLE = {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      paddingTop: "10px",
-      paddingBottom: "10px"
-    };
-
     return (
-      <div style={CONTAINER_STYLE}>
-        <MainNav onClick={this.props.onNavClick} />
+      <div style={STYLE.containerStyle}>
+        <Section section="home" onClick={this.props.onNavClick} />
+        <Section section="career" onClick={this.props.onNavClick} />
+        <Section section="finance" onClick={this.props.onNavClick} />
+        <Section section="health" onClick={this.props.onNavClick} />
+        <Section section="medical" onClick={this.props.onNavClick} />
+        <Section section="school" onClick={this.props.onNavClick} />
       </div>
     );
   }

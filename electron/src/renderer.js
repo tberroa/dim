@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MainPanel from "./components/MainPanel/index";
 import Home from "./scenes/Home/index";
+import MainPanel from "./components/MainPanel/index";
 import Section from "./scenes/Section/index";
 import Settings from "./services/settings";
+import CONSTANTS from "./constants";
 import STYLE from "./style";
-import FEATURE_NAMES from "./constants";
 
 // Function used to handle the user clicking on one the main navigation section buttons.
 function navClickHandler(){
   // Home was clicked, nothing special needs to happen, simply render the home page component.
   if (this.props.section == "home"){
-    ReactDOM.render(<Home />, document.getElementById("content-container"));
+    ReactDOM.render(<Home />, document.getElementById("section-container"));
     return;
   }
 
@@ -24,15 +24,15 @@ function navClickHandler(){
   // Get the feature names for the given section.
   let featureNames = null;
   if (this.props.section == "career"){
-    featureNames = FEATURE_NAMES.career;
+    featureNames = CONSTANTS.featureNames.career;
   } else if (this.props.section == "finance"){
-    featureNames = FEATURE_NAMES.finance;
+    featureNames = CONSTANTS.featureNames.finance;
   } else if (this.props.section == "health"){
-    featureNames = FEATURE_NAMES.health;
+    featureNames = CONSTANTS.featureNames.health;
   } else if (this.props.section == "medical"){
-    featureNames = FEATURE_NAMES.medical;
+    featureNames = CONSTANTS.featureNames.medical;
   } else if (this.props.section == "school"){
-    featureNames = FEATURE_NAMES.school;
+    featureNames = CONSTANTS.featureNames.school;
   }
 
   // The state property represents whether a feature is being used or not by the user.
@@ -50,17 +50,17 @@ function navClickHandler(){
   // Render the corresponding section page and pass down the data.
   ReactDOM.render(
     <Section data={data} />,
-    document.getElementById("content-container")
+    document.getElementById("section-container")
   );
 }
 
 // Render the app.
 ReactDOM.render(
   <div style={STYLE.appContainer}>
-    <div id="main-container" style={STYLE.mainContainer}>
+    <div style={STYLE.mainContainer}>
       <MainPanel onNavClick={navClickHandler} />
     </div>
-    <div id="content-container" style={STYLE.contentContainer}>
+    <div id="section-container" style={STYLE.sectionContainer}>
       <Home />
     </div>
   </div>,

@@ -5,7 +5,7 @@ import STYLE from "./style";
 export default class FeaturesPanel extends React.Component {
   render() {
     let features = this.props.features.map((feature) => {
-      return (<Feature name={feature.name} state={feature.state} />);
+      return (<Feature key={feature.name} name={feature.name} state={feature.state} />);
     });
 
     return (

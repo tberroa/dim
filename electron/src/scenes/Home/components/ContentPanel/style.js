@@ -1,15 +1,14 @@
 const STYLE = {
   container: {
-    flex: "0 0 auto",
-    width: "125px",
+    flex: "1 1 auto",
+    width: "100%",
     height: "100%",
+    backgroundColor: "#5B5681",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#393958",
-    paddingTop: "10px",
-    paddingBottom: "10px",
-    overflow: "auto"
+    overflow: "hidden"
   }
 };
 

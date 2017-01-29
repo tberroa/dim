@@ -9,7 +9,7 @@ export default class FeaturesPanel extends React.Component {
     });
 
     return (
-      <div style={STYLE.containerStyle}>
+      <div style={STYLE.container}>
         {features}
       </div>
     );

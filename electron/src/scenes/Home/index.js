@@ -1,19 +1,14 @@
 import React from "react";
+import ContentPanel from "./components/ContentPanel/index";
+import MainPanel from "../../components/MainPanel/index";
+import STYLE from "./style";
 
 export default class Home extends React.Component {
   render() {
-    const CONTAINER_STYLE = {
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center"
-    };
-
     return (
-      <div style={CONTAINER_STYLE}>
-        <h1>Home Content</h1>
+      <div style={STYLE.container}>
+        <MainPanel onNavClick={this.props.onNavClick} />
+        <ContentPanel />
       </div>
     );
   }

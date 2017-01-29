@@ -5,7 +5,7 @@ import STYLE from "./style";
 export default class MainPanel extends React.Component {
   render() {
     return (
-      <div style={STYLE.containerStyle}>
+      <div style={STYLE.container}>
         <Section section="home" onClick={this.props.onNavClick} />
         <Section section="career" onClick={this.props.onNavClick} />
         <Section section="finance" onClick={this.props.onNavClick} />

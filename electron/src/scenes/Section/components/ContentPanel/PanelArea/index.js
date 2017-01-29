@@ -4,7 +4,7 @@ import STYLE from "./style";
 export default class PanelArea extends React.Component {
   render() {
     return (
-      <div style={STYLE.containerStyle}>
+      <div style={STYLE.container}>
       </div>
     );
   }

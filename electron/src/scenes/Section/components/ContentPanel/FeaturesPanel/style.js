@@ -1,5 +1,5 @@
 const STYLE = {
-  containerStyle: {
+  container: {
     flex: "0 1 auto",
     width: "100%",
     height: "50px",

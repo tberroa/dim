@@ -1,17 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./scenes/Home/index";
-import MainPanel from "./components/MainPanel/index";
 import Section from "./scenes/Section/index";
 import Settings from "./services/settings";
 import CONSTANTS from "./constants";
-import STYLE from "./style";
 
 // Function used to handle the user clicking on one the main navigation section buttons.
 function navClickHandler(){
   // Home was clicked, nothing special needs to happen, simply render the home page component.
   if (this.props.section == "home"){
-    ReactDOM.render(<Home />, document.getElementById("section-container"));
+    ReactDOM.render(
+      <Home onNavClick={navClickHandler}/>,
+      document.getElementById("app")
+    );
     return;
   }
 
@@ -49,20 +50,13 @@ function navClickHandler(){
 
   // Render the corresponding section page and pass down the data.
   ReactDOM.render(
-    <Section data={data} />,
-    document.getElementById("section-container")
+    <Section onNavClick={navClickHandler} data={data} />,
+    document.getElementById("app")
   );
 }
 
 // Render the app.
 ReactDOM.render(
-  <div style={STYLE.appContainer}>
-    <div style={STYLE.mainContainer}>
-      <MainPanel onNavClick={navClickHandler} />
-    </div>
-    <div id="section-container" style={STYLE.sectionContainer}>
-      <Home />
-    </div>
-  </div>,
+  <Home onNavClick={navClickHandler}/>,
   document.getElementById("app")
 );

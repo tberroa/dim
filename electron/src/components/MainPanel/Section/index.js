@@ -7,9 +7,9 @@ export default class Section extends React.Component {
     const IMG_PATH = ROOT_PATH + "assets/" + this.props.section + ".png";
 
     return (
-      <div style={STYLE.containerStyle} onClick={this.props.onClick.bind(this)}>
-        <img src={IMG_PATH} alt ="" style={STYLE.imageStyle} />
-        <div style={STYLE.textStyle}>{this.props.section}</div>
+      <div style={STYLE.container} onClick={this.props.onClick.bind(this)}>
+        <img src={IMG_PATH} alt ="" style={STYLE.image} />
+        <div style={STYLE.text}>{this.props.section}</div>
       </div>
     );
   }

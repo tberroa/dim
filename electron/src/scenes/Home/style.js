@@ -1,11 +1,10 @@
 const STYLE = {
-  containerStyle: {
-    flex: "1 1 auto",
+  container: {
     width: "100%",
     height: "100%",
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-end"
+    flexDirection: "row",
+    overflow: "hidden"
   }
 };
 

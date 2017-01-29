@@ -1,5 +1,5 @@
 const STYLE = {
-  containerStyle: {
+  container: {
     flex: "0 0 auto",
     width: "80px",
     height: "30px",
@@ -12,7 +12,7 @@ const STYLE = {
     padding: "5px",
     margin: "5px"
   },
-  textStyle:  {
+  text:  {
     fontSize: "12px",
     color: "#393958",
     textAlign: "center",

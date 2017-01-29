@@ -6,7 +6,7 @@ import STYLE from "./style";
 export default class ContentPanel extends React.Component {
   render() {
     return (
-      <div style={STYLE.containerStyle}>
+      <div style={STYLE.container}>
         <PanelArea />
         <FeaturesPanel features={this.props.features} />
       </div>

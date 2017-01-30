@@ -1,8 +1,8 @@
 const STYLE = {
   container: {
     flex: "0 0 auto",
-    width: "80px",
-    height: "30px",
+    width: "75px",
+    height: "25px",
     backgroundColor: "#DAC3E0",
     display: "flex",
     flexDirection: "column",
@@ -10,10 +10,10 @@ const STYLE = {
     alignItems: "center",
     borderRadius: "10%",
     padding: "5px",
-    margin: "5px"
+    margin: "10px 5px"
   },
   text:  {
-    fontSize: "12px",
+    fontSize: "10px",
     color: "#393958",
     textAlign: "center",
     margin: "auto"

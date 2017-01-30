@@ -6,6 +6,7 @@ const STYLE = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    WebkitUserSelect: "none",
     padding: "10px 0px 0px",
     overflow: "auto"
   }

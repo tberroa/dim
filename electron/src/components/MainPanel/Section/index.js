@@ -8,7 +8,7 @@ export default class Section extends React.Component {
 
     return (
       <div style={STYLE.container} onClick={this.props.onClick.bind(this)}>
-        <img src={IMG_PATH} alt ="" style={STYLE.image} />
+        <img src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
         <div style={STYLE.text}>{this.props.section}</div>
       </div>
     );

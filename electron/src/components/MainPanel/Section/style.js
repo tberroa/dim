@@ -6,6 +6,8 @@ const STYLE = {
     backgroundColor: "#DAC3E0",
     borderRadius: "10%",
     textAlign: "center",
+    cursor: "pointer",
+    WebkitUserSelect: "none",
     padding: "5px",
     margin: "5px"
   },
@@ -13,11 +15,13 @@ const STYLE = {
     width: "50px",
     height: "50px",
     display: "block",
+    WebkitUserSelect: "none",
     margin: "auto"
   },
   text: {
     fontSize: "14px",
-    color: "#393958"
+    color: "#393958",
+    WebkitUserSelect: "none"
   }
 };
 

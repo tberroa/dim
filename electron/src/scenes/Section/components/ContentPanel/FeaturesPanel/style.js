@@ -6,6 +6,7 @@ const STYLE = {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    WebkitUserSelect: "none",
     overflow: "auto"
   }
 };

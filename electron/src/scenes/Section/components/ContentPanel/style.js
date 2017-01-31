@@ -4,6 +4,7 @@ const STYLE = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
+    WebkitUserSelect: "none",
     overflow: "hidden"
   }
 };

@@ -6,12 +6,12 @@ export default class MainPanel extends React.Component {
   render() {
     return (
       <div style={STYLE.container}>
-        <Section section="home" onClick={this.props.onNavClick} />
-        <Section section="career" onClick={this.props.onNavClick} />
-        <Section section="finance" onClick={this.props.onNavClick} />
-        <Section section="health" onClick={this.props.onNavClick} />
-        <Section section="medical" onClick={this.props.onNavClick} />
-        <Section section="school" onClick={this.props.onNavClick} />
+        <Section section="home" handleNavClick={this.props.handleNavClick} />
+        <Section section="career" handleNavClick={this.props.handleNavClick} />
+        <Section section="finance" handleNavClick={this.props.handleNavClick} />
+        <Section section="health" handleNavClick={this.props.handleNavClick} />
+        <Section section="medical" handleNavClick={this.props.handleNavClick} />
+        <Section section="school" handleNavClick={this.props.handleNavClick} />
       </div>
     );
   }

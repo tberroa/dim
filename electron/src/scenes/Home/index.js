@@ -7,7 +7,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div style={STYLE.container}>
-        <MainPanel onNavClick={this.props.onNavClick} />
+        <MainPanel handleNavClick={this.props.handleNavClick} />
         <ContentPanel />
       </div>
     );

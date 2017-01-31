@@ -6,11 +6,11 @@ import Settings from "./services/settings";
 import CONSTANTS from "./constants";
 
 // Function used to handle the user clicking on one the main navigation section buttons.
-function navClickHandler(){
+function handleNavClick(){
   // Home was clicked, nothing special needs to happen, simply render the home page component.
   if (this.props.section == "home"){
     ReactDOM.render(
-      <Home onNavClick={navClickHandler}/>,
+      <Home handleNavClick={handleNavClick}/>,
       document.getElementById("app")
     );
     return;
@@ -50,13 +50,13 @@ function navClickHandler(){
 
   // Render the corresponding section page and pass down the data.
   ReactDOM.render(
-    <Section onNavClick={navClickHandler} data={data} />,
+    <Section handleNavClick={handleNavClick} data={data} />,
     document.getElementById("app")
   );
 }
 
 // Render the app.
 ReactDOM.render(
-  <Home onNavClick={navClickHandler}/>,
+  <Home handleNavClick={handleNavClick}/>,
   document.getElementById("app")
 );

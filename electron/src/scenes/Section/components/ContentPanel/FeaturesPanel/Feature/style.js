@@ -1,20 +1,20 @@
 const STYLE = {
   container: {
     flex: "0 0 auto",
-    width: "75px",
-    height: "25px",
-    backgroundColor: "#DAC3E0",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: "10%",
-    padding: "5px",
-    margin: "10px 5px"
+    minWidth: "70px",
+    borderRight: "2px solid #393958",
+    padding: "8px",
+    margin: "8px 0px"
+  },
+  containerLast: {
+    flex: "0 0 auto",
+    minWidth: "70px",
+    padding: "8px",
+    margin: "8px 0px"
   },
   text:  {
-    fontSize: "10px",
-    color: "#393958",
+    fontSize: "14px",
+    color: "#f7f8f9",
     textAlign: "center",
     margin: "auto"
   }

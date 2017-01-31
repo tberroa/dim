@@ -16,13 +16,6 @@ export default class Section extends React.Component {
     });
   }
 
-  handleMouseOut(){
-    this.setState({
-      hover: false,
-      pressed: false
-    });
-  }
-
   handleMouseDown(){
     this.setState({
       pressed: true
@@ -31,6 +24,13 @@ export default class Section extends React.Component {
 
   handleMouseUp(){
     this.setState({
+      pressed: false
+    });
+  }
+
+  handleMouseOut(){
+    this.setState({
+      hover: false,
       pressed: false
     });
   }
@@ -50,9 +50,9 @@ export default class Section extends React.Component {
     return (
       <div style={containerStyle}
            onMouseOver={this.handleMouseOver.bind(this)}
-           onMouseOut={this.handleMouseOut.bind(this)}
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
+           onMouseOut={this.handleMouseOut.bind(this)}
            onClick={this.props.handleNavClick.bind(this)}>
         <img src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
         <div style={STYLE.text}>{this.props.section}</div>

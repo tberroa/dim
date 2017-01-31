@@ -14,7 +14,7 @@ const STYLE = {
   },
   text:  {
     fontSize: "14px",
-    color: "#f7f8f9",
+    color: "#F7F8F9",
     textAlign: "center",
     margin: "auto"
   }

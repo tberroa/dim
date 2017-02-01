@@ -11,30 +11,6 @@ const STYLE = {
     padding: "5px",
     margin: "5px"
   },
-  containerHover: {
-    flex: "0 0 auto",
-    width: "75px",
-    height: "75px",
-    backgroundColor: "#C1B7FF",
-    borderRadius: "10%",
-    textAlign: "center",
-    cursor: "pointer",
-    WebkitUserSelect: "none",
-    padding: "5px",
-    margin: "5px"
-  },
-  containerPressed: {
-    flex: "0 0 auto",
-    width: "75px",
-    height: "75px",
-    backgroundColor: "#9689ED",
-    borderRadius: "10%",
-    textAlign: "center",
-    cursor: "pointer",
-    WebkitUserSelect: "none",
-    padding: "5px",
-    margin: "5px"
-  },
   image: {
     width: "50px",
     height: "50px",

@@ -3,7 +3,7 @@ const STYLE = {
     flex: "0 0 auto",
     minWidth: "70px",
     borderRight: "2px solid #393958",
-    cursor: "pointer",
+    cursor: "move",
     WebkitUserSelect: "none",
     padding: "8px",
     margin: "8px 0px"
@@ -12,7 +12,7 @@ const STYLE = {
     flex: "0 0 auto",
     minWidth: "70px",
     borderRight: "2px solid #393958",
-    cursor: "pointer",
+    cursor: "move",
     WebkitUserSelect: "none",
     borderRadius: "10px 0px 0px 10px",
     padding: "8px",
@@ -21,7 +21,7 @@ const STYLE = {
   containerEnd: {
     flex: "0 0 auto",
     minWidth: "70px",
-    cursor: "pointer",
+    cursor: "move",
     WebkitUserSelect: "none",
     borderRadius: "0px 10px 10px 0px",
     padding: "8px",

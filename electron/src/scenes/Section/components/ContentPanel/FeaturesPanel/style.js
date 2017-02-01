@@ -7,7 +7,8 @@ const STYLE = {
     justifyContent: "center",
     alignItems: "center",
     WebkitUserSelect: "none",
-    overflow: "auto"
+    overflowX: "auto",
+    overflowY: "hidden"
   }
 };
 

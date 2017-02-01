@@ -1,61 +1,45 @@
 import React from "react";
+import TweenMax from "gsap";
 import STYLE from "./style";
 
 export default class Feature extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      hover: false,
-      pressed: false
-    };
-  }
-
-  handleMouseOver(){
-    this.setState({
-      hover: true
-    });
+  handleMouseEnter(){
+    TweenMax.to(this.container, 0.15, {backgroundColor:"#9689ED"});
   }
 
   handleMouseDown(){
-    this.setState({
-      pressed: true
-    });
+    TweenMax.to(this.container, 0.15, {backgroundColor:"#C1B7FF"});
   }
 
   handleMouseUp(){
-    this.setState({
-      pressed: false
-    });
+    TweenMax.to(this.container, 0.15, {backgroundColor:"#9689ED"});
   }
 
-  handleMouseOut(){
-    this.setState({
-      hover: false,
-      pressed: false
-    });
+  handleMouseLeave(){
+    TweenMax.to(this.container, 0.15, {backgroundColor:"transparent"});
+  }
+
+  componentWillAppear(callback){
+    TweenMax.fromTo(
+      this.container, 0.15, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback}
+    );
   }
 
   render() {
     let containerStyle = STYLE.container;
 
-    if (this.state.pressed && !this.props.last){
-      containerStyle = STYLE.containerPressed;
-    } else if (this.state.pressed && this.props.last){
-      containerStyle = STYLE.containerLastPressed;
-    } else if (this.state.hover && !this.props.last){
-      containerStyle = STYLE.containerHover;
-    } else if (this.state.hover && this.props.last){
-      containerStyle = STYLE.containerLastHover;
-    } else if (this.props.last){
-      containerStyle = STYLE.containerLast;
+    if (this.props.start){
+      containerStyle = STYLE.containerStart;
+    } else if (this.props.end){
+      containerStyle = STYLE.containerEnd;
     }
 
     return (
-      <div style={containerStyle}
-           onMouseOver={this.handleMouseOver.bind(this)}
+      <div ref={container => this.container = container} style={containerStyle}
+           onMouseEnter={this.handleMouseEnter.bind(this)}
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
-           onMouseOut={this.handleMouseOut.bind(this)}>
+           onMouseLeave={this.handleMouseLeave.bind(this)}>
         <div style={STYLE.text}>{this.props.name}</div>
       </div>
     );

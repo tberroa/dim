@@ -9,7 +9,7 @@ export default class Section extends React.Component {
     return (
       <div style={STYLE.container}>
         <MainPanel handleNavClick={this.props.handleNavClick} />
-        <ContentPanel features={this.props.data.features} />
+        <ContentPanel section={this.props.data.section} features={this.props.data.features} />
         <InfoPanel section={this.props.data.section} />
       </div>
     );

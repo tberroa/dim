@@ -8,49 +8,22 @@ const STYLE = {
     padding: "8px",
     margin: "8px 0px"
   },
-  containerLast: {
+  containerStart: {
     flex: "0 0 auto",
     minWidth: "70px",
-    cursor: "pointer",
-    WebkitUserSelect: "none",
-    padding: "8px",
-    margin: "8px 0px"
-  },
-  containerHover: {
-    flex: "0 0 auto",
-    minWidth: "70px",
-    backgroundColor: "#9689ED",
     borderRight: "2px solid #393958",
     cursor: "pointer",
     WebkitUserSelect: "none",
+    borderRadius: "10px 0px 0px 10px",
     padding: "8px",
     margin: "8px 0px"
   },
-  containerLastHover: {
+  containerEnd: {
     flex: "0 0 auto",
     minWidth: "70px",
-    backgroundColor: "#9689ED",
     cursor: "pointer",
     WebkitUserSelect: "none",
-    padding: "8px",
-    margin: "8px 0px"
-  },
-  containerPressed: {
-    flex: "0 0 auto",
-    minWidth: "70px",
-    backgroundColor: "#C1B7FF",
-    borderRight: "2px solid #393958",
-    cursor: "pointer",
-    WebkitUserSelect: "none",
-    padding: "8px",
-    margin: "8px 0px"
-  },
-  containerLastPressed: {
-    flex: "0 0 auto",
-    minWidth: "70px",
-    backgroundColor: "#C1B7FF",
-    cursor: "pointer",
-    WebkitUserSelect: "none",
+    borderRadius: "0px 10px 10px 0px",
     padding: "8px",
     margin: "8px 0px"
   },

@@ -4,19 +4,23 @@ import STYLE from "./style";
 
 export default class Feature extends React.Component {
   handleMouseEnter(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#9689ED"});
+    TweenMax.fromTo(
+      this.container, 0.15, {backgroundColor:"#474C78"}, {backgroundColor: "#5E6496"}
+    );
   }
 
   handleMouseDown(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#C1B7FF"});
+    TweenMax.to(this.container, 0.15, {backgroundColor:"#898FC6"});
   }
 
   handleMouseUp(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#9689ED"});
+    TweenMax.to(this.container, 0.15, {backgroundColor:"#5E6496"});
   }
 
   handleMouseLeave(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"transparent"});
+    TweenMax.fromTo(
+      this.container, 0.15, {backgroundColor:"#5E6496"}, {backgroundColor:"#474C78"}
+    );
   }
 
   componentWillAppear(callback){

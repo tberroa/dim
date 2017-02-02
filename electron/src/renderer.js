@@ -5,21 +5,27 @@ import Section from "./scenes/Section/index";
 import Settings from "./services/settings";
 import CONSTANTS from "./constants";
 
-// Function used to handle the user clicking on one the main navigation section buttons.
-function handleNavClick(){
-  // Home was clicked, nothing special needs to happen, simply render the home page component.
-  if (this.props.section == "home"){
-    ReactDOM.render(
-      <Home handleNavClick={handleNavClick}/>,
-      document.getElementById("app")
-    );
-    return;
-  }
+// Initialize a package to store all handlers for easily passing down to other components.
+let handlers = {
+  handleHomeClick: handleHomeClick,
+  handleSectionClick: handleSectionClick
+};
 
-  // A non home button was clicked, initialize a data package.
+// Function used to handle the user clicking on the home navigation button.
+function handleHomeClick(){
+  // Render the home page.
+  ReactDOM.render(
+    <Home handlers={handlers}/>,
+    document.getElementById("app")
+  );
+}
+
+// Function used to handle the user clicking on one of the section navigation button.
+function handleSectionClick(){
+  // Initialize a data package to pass down to other components.
   let data = {};
 
-  // Include the section in the data package.
+  // Include the clicked section in the data package.
   data.section = this.props.section;
 
   // Get the feature names for the given section.
@@ -48,15 +54,15 @@ function handleNavClick(){
   // Include the feature information in the data package.
   data.features = features;
 
-  // Render the corresponding section page and pass down the data.
+  // Render the clicked section page.
   ReactDOM.render(
-    <Section handleNavClick={handleNavClick} data={data} />,
+    <Section handlers={handlers} data={data} />,
     document.getElementById("app")
   );
 }
 
-// Render the app.
+// Render the home page by default.
 ReactDOM.render(
-  <Home handleNavClick={handleNavClick}/>,
+  <Home handlers={handlers}/>,
   document.getElementById("app")
 );

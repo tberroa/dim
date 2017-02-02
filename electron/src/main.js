@@ -7,8 +7,9 @@ let mainWindow = null;
 // Function used to create the main window for the application.
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 650,
+    frame: false
   });
 
   // Disable the menu bar.

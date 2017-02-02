@@ -2,7 +2,7 @@ import React from "react";
 import TweenMax from "gsap";
 import STYLE from "./style";
 
-export default class Section extends React.Component {
+export default class Home extends React.Component {
   handleMouseEnter(){
     TweenMax.to(this.container, 0.15, {backgroundColor:"#C1B7FF"});
   }
@@ -20,20 +20,18 @@ export default class Section extends React.Component {
   }
 
   render() {
-    const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Section/";
-    const IMG_PATH = ROOT_PATH + "assets/" + this.props.section + ".png";
+    const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Home/";
+    const IMG_PATH = ROOT_PATH + "assets/home.png";
 
     return (
-      <div ref={container => this.container = container}
+      <div ref={container => this.container = container} style={STYLE.container}
            onMouseEnter={this.handleMouseEnter.bind(this)}
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
            onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.props.handleClick.bind(this)}
-           style={STYLE.container}>
-        <img ref={image => this.image = image}
-             src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
-        <div style={STYLE.text}>{this.props.section}</div>
+           onClick={this.props.handleClick.bind(this)}>
+        <img src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
+        <div style={STYLE.text}>home</div>
       </div>
     );
   }

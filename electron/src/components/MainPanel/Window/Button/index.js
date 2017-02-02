@@ -16,13 +16,13 @@ export default class Button extends React.Component {
 
   handleMouseUp(){
     TweenMax.to(this.container, 0, {opacity: 1});
-    TweenMax.to(this.image, 0.15, {y: 0});
+    TweenMax.to(this.image, 0.1, {y: 0});
   }
 
   handleMouseLeave(){
     TweenMax.to(this.container, 0, {opacity: 1});
-    TweenMax.to(this.image, 0.15, {opacity: 0});
-    TweenMax.to(this.image, 0.15, {y: 0});
+    TweenMax.to(this.image, 0.1, {y: 0});
+    TweenMax.to(this.image, 0.2, {opacity: 0});
   }
 
   render() {

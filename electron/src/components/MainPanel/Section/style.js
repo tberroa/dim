@@ -8,12 +8,12 @@ const STYLE = {
     textAlign: "center",
     cursor: "pointer",
     WebkitUserSelect: "none",
-    padding: "5px",
+    padding: "5px 5px 8px 5px",
     margin: "5px"
   },
   image: {
-    width: "50px",
-    height: "50px",
+    width: "45px",
+    height: "45px",
     display: "block",
     WebkitUserSelect: "none",
     margin: "auto"

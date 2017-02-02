@@ -4,19 +4,23 @@ import STYLE from "./style";
 
 export default class Section extends React.Component {
   handleMouseEnter(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#C1B7FF"});
+    TweenMax.to(this.container, 0.2, {backgroundColor:"#C1B7FF"});
+    TweenMax.to(this.image, 0.2, {scale: 1.2, ease: Bounce});
+    TweenMax.to(this.image, 0.2, {scale: 1, delay: 0.2});
   }
 
   handleMouseDown(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#9689ED"});
+    TweenMax.to(this.container, 0.1, {backgroundColor:"#9689ED"});
+    TweenMax.to(this.image, 0.1, {y: 2});
   }
 
   handleMouseUp(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#C1B7FF"});
+    TweenMax.to(this.container, 0.1, {backgroundColor:"#C1B7FF"});
+    TweenMax.to(this.image, 0.1, {y: 0});
   }
 
   handleMouseLeave(){
-    TweenMax.to(this.container, 0.15, {backgroundColor:"#E6D0ED"});
+    TweenMax.to(this.container, 0.2, {backgroundColor:"#E6D0ED"});
   }
 
   render() {

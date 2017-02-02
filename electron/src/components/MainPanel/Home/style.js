@@ -10,8 +10,8 @@ const STYLE = {
     padding: "5px"
   },
   image: {
-    width: "45px",
-    height: "45px",
+    width: "40px",
+    height: "40px",
     display: "block",
     WebkitUserSelect: "none",
     margin: "auto"

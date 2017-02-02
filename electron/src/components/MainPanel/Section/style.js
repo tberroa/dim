@@ -8,7 +8,7 @@ const STYLE = {
     textAlign: "center",
     cursor: "pointer",
     WebkitUserSelect: "none",
-    padding: "5px 5px 8px 5px",
+    padding: "8px 5px 5px 5px",
     margin: "5px"
   },
   image: {

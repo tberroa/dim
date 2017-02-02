@@ -8,7 +8,7 @@ export default class ContentPanel extends React.Component {
     return (
       <div style={STYLE.container}>
         <PanelArea />
-        <FeaturesPanel section={this.props.section} features={this.props.features} />
+        <FeaturesPanel section={this.props.section} />
       </div>
     );
   }

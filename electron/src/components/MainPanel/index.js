@@ -9,12 +9,12 @@ export default class MainPanel extends React.Component {
     return (
       <div style={STYLE.container}>
         <Window />
-        <Home handleClick={this.props.handlers.handleHomeClick} />
-        <Section section="career" handleClick={this.props.handlers.handleSectionClick} />
-        <Section section="finance" handleClick={this.props.handlers.handleSectionClick} />
-        <Section section="health" handleClick={this.props.handlers.handleSectionClick} />
-        <Section section="medical" handleClick={this.props.handlers.handleSectionClick} />
-        <Section section="school" handleClick={this.props.handlers.handleSectionClick} />
+        <Home />
+        <Section section="career" />
+        <Section section="finance" />
+        <Section section="health" />
+        <Section section="medical" />
+        <Section section="school" />
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import TweenMax from "gsap";
+import SectionScene from "../../../scenes/Section/index";
 import STYLE from "./style";
 
 export default class Section extends React.Component {
@@ -23,6 +25,13 @@ export default class Section extends React.Component {
     TweenMax.to(this.container, 0.2, {backgroundColor:"#E6D0ED"});
   }
 
+  handleClick(){
+    ReactDOM.render(
+      <SectionScene section={this.props.section} />,
+      document.getElementById("app")
+    );
+  }
+
   render() {
     const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Section/";
     const IMG_PATH = ROOT_PATH + "assets/" + this.props.section + ".png";
@@ -33,7 +42,7 @@ export default class Section extends React.Component {
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
            onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.props.handleClick.bind(this)}
+           onClick={this.handleClick.bind(this)}
            style={STYLE.container}>
         <img ref={image => this.image = image}
              src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />

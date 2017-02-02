@@ -7,7 +7,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div style={STYLE.container}>
-        <MainPanel handlers={this.props.handlers} />
+        <MainPanel />
         <ContentPanel />
       </div>
     );

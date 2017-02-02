@@ -1,5 +1,7 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import TweenMax from "gsap";
+import HomeScene from "../../../scenes/Home/index";
 import STYLE from "./style";
 
 export default class Home extends React.Component {
@@ -23,6 +25,13 @@ export default class Home extends React.Component {
     TweenMax.to(this.container, 0.2, {backgroundColor:"#E6D0ED"});
   }
 
+  handleClick(){
+    ReactDOM.render(
+      <HomeScene />,
+      document.getElementById("app")
+    );
+  }
+
   render() {
     const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Home/";
     const IMG_PATH = ROOT_PATH + "assets/home.png";
@@ -33,7 +42,7 @@ export default class Home extends React.Component {
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
            onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.props.handleClick.bind(this)}>
+           onClick={this.handleClick}>
         <img ref={image => this.image = image}
              src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
         <div style={STYLE.text}>home</div>

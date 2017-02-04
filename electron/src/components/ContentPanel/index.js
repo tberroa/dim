@@ -1,7 +1,7 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-transition-group";
-import FeaturesPanel from "./FeaturesPanel/index";
 import ContentArea from "./ContentArea/index";
+import FeaturesPanel from "./FeaturesPanel/index";
 import STYLE from "./style";
 
 export default class ContentPanel extends React.Component {

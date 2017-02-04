@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
+import InfoPanel from "../../InfoPanel/index";
 import MainPanel from "../index";
 import CONSTANTS from "../../../constants";
 import STYLE from "./style";
@@ -32,6 +33,7 @@ export default class Section extends React.Component {
       <div style={CONSTANTS.appContainerStyle}>
         <MainPanel />
         <ContentPanel section={this.props.section}/>
+        <InfoPanel />
       </div>,
       document.getElementById("app")
     );

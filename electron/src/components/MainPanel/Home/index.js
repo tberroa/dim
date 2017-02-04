@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import TweenMax from "gsap";
-import HomeScene from "../../../scenes/Home/index";
+import ContentPanel from "../../ContentPanel/index";
+import MainPanel from "../index";
+import CONSTANTS from "../../../constants";
 import STYLE from "./style";
 
 export default class Home extends React.Component {
@@ -27,7 +29,10 @@ export default class Home extends React.Component {
 
   handleClick(){
     ReactDOM.render(
-      <HomeScene />,
+      <div style={CONSTANTS.appContainerStyle}>
+        <MainPanel />
+        <ContentPanel />
+      </div>,
       document.getElementById("app")
     );
   }
@@ -37,12 +42,13 @@ export default class Home extends React.Component {
     const IMG_PATH = ROOT_PATH + "assets/home.png";
 
     return (
-      <div ref={container => this.container = container} style={STYLE.container}
+      <div ref={container => this.container = container}
            onMouseEnter={this.handleMouseEnter.bind(this)}
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
            onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.handleClick}>
+           onClick={this.handleClick}
+           style={STYLE.container}>
         <img ref={image => this.image = image}
              src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
         <div style={STYLE.text}>home</div>

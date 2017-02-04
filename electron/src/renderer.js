@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./scenes/Home/index";
+import ContentPanel from "./components/ContentPanel/index";
+import MainPanel from "./components/MainPanel/index";
+import CONSTANTS from "./constants";
 
 ReactDOM.render(
-  <Home />,
+  <div style={CONSTANTS.appContainerStyle}>
+    <MainPanel />
+    <ContentPanel />
+  </div>,
   document.getElementById("app")
 );

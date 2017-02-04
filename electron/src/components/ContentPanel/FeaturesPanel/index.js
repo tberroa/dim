@@ -1,7 +1,7 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-transition-group";
 import Feature from "./Feature/index";
-import CONSTANTS from "../../../../../constants";
+import CONSTANTS from "../../../constants";
 import STYLE from "./style";
 
 export default class FeaturesPanel extends React.Component {

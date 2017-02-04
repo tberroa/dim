@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import TweenMax from "gsap";
-import SectionScene from "../../../scenes/Section/index";
+import ContentPanel from "../../ContentPanel/index";
+import MainPanel from "../index";
+import CONSTANTS from "../../../constants";
 import STYLE from "./style";
 
 export default class Section extends React.Component {
@@ -27,7 +29,10 @@ export default class Section extends React.Component {
 
   handleClick(){
     ReactDOM.render(
-      <SectionScene section={this.props.section} />,
+      <div style={CONSTANTS.appContainerStyle}>
+        <MainPanel />
+        <ContentPanel section={this.props.section}/>
+      </div>,
       document.getElementById("app")
     );
   }

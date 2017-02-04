@@ -1,11 +1,11 @@
 import React from "react";
 import STYLE from "./style";
 
-export default class ContentPanel extends React.Component {
+export default class ContentArea extends React.Component {
   render() {
     return (
       <div style={STYLE.container}>
-        <h1>Home Content</h1>
+        Content Area
       </div>
     );
   }

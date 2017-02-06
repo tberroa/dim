@@ -4,6 +4,7 @@ const CONSTANTS = {
     height: "100%",
     display: "flex",
     flexDirection: "row",
+    backgroundColor: "#5B5681",
     overflow: "hidden"
   },
   featureNames: {

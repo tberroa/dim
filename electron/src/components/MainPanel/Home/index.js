@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ReactTransitionGroup from "react-addons-transition-group";
 import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
 import MainPanel from "../index";
@@ -29,10 +30,10 @@ export default class Home extends React.Component {
 
   handleClick(){
     ReactDOM.render(
-      <div style={CONSTANTS.appContainerStyle}>
+      <ReactTransitionGroup style={CONSTANTS.appContainerStyle}>
         <MainPanel />
         <ContentPanel />
-      </div>,
+      </ReactTransitionGroup>,
       document.getElementById("app")
     );
   }

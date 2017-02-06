@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ReactTransitionGroup from "react-addons-transition-group";
 import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
 import InfoPanel from "../../InfoPanel/index";
@@ -30,11 +31,11 @@ export default class Section extends React.Component {
 
   handleClick(){
     ReactDOM.render(
-      <div style={CONSTANTS.appContainerStyle}>
+      <ReactTransitionGroup style={CONSTANTS.appContainerStyle}>
         <MainPanel />
-        <ContentPanel section={this.props.section}/>
-        <InfoPanel />
-      </div>,
+        <ContentPanel section={this.props.section} />
+        <InfoPanel section={this.props.section} />
+      </ReactTransitionGroup>,
       document.getElementById("app")
     );
   }
@@ -45,15 +46,15 @@ export default class Section extends React.Component {
 
     return (
       <div ref={container => this.container = container}
-           onMouseEnter={this.handleMouseEnter.bind(this)}
-           onMouseDown={this.handleMouseDown.bind(this)}
-           onMouseUp={this.handleMouseUp.bind(this)}
-           onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.handleClick.bind(this)}
-           style={STYLE.container}>
-        <img ref={image => this.image = image}
-             src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
-        <div style={STYLE.text}>{this.props.section}</div>
+      onMouseEnter={this.handleMouseEnter.bind(this)}
+      onMouseDown={this.handleMouseDown.bind(this)}
+      onMouseUp={this.handleMouseUp.bind(this)}
+      onMouseLeave={this.handleMouseLeave.bind(this)}
+      onClick={this.handleClick.bind(this)}
+      style={STYLE.container}>
+      <img ref={image => this.image = image}
+      src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
+      <div style={STYLE.text}>{this.props.section}</div>
       </div>
     );
   }

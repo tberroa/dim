@@ -1,10 +1,23 @@
 import React from "react";
 import ReactTransitionGroup from "react-addons-transition-group";
+import TweenMax from "gsap";
 import Feature from "./Feature/index";
 import CONSTANTS from "../../../constants";
 import STYLE from "./style";
 
 export default class FeaturesPanel extends React.Component {
+  componentWillEnter(callback){
+    TweenMax.fromTo(
+      this.container, 0.5, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback}
+    );
+  }
+
+  componentWillLeave(callback){
+    TweenMax.fromTo(
+      this.container, 0.5, {y: 0, opacity: 1}, {y: 100, opacity: 0, onComplete: callback}
+    );
+  }
+
   render() {
     let names = null;
     if (this.props.section == "career"){
@@ -30,7 +43,7 @@ export default class FeaturesPanel extends React.Component {
     });
 
     return (
-      <div style={STYLE.container}>
+      <div ref={container => this.container = container} style={STYLE.container}>
         {features}
       </div>
     );

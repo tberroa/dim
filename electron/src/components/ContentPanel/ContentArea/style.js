@@ -5,7 +5,6 @@ const STYLE = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#5B5681",
     overflowX: "hidden",
     overflowY: "auto"
   }

@@ -8,7 +8,9 @@ export default class ContentPanel extends React.Component {
   render() {
     return (
       <div style={STYLE.container}>
-        <ContentArea />
+        <ReactTransitionGroup style={STYLE.content}>
+          <ContentArea key={this.props.section} section={this.props.section}/>
+        </ReactTransitionGroup>
         <ReactTransitionGroup>
           {this.props.section && <FeaturesPanel section={this.props.section} />}
         </ReactTransitionGroup>

@@ -8,6 +8,7 @@ const STYLE = {
     textAlign: "center",
     cursor: "pointer",
     WebkitUserSelect: "none",
+    zIndex: "2",
     padding: "8px 5px 5px 5px",
     margin: "12px"
   },

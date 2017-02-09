@@ -7,6 +7,7 @@ const STYLE = {
     justifyContent: "center",
     alignItems: "center",
     WebkitAppRegion: "drag",
+    zIndex: "2",
     padding: "5px"
   }
 };

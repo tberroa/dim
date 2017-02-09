@@ -15,8 +15,9 @@ const STYLE = {
     flex: "0 0 auto",
     width: "125px",
     height: "100px",
-    backgroundColor: "#323070",
+    backgroundColor: "#1E2D44",
     position: "absolute",
+    opacity: "0",
     zIndex: "1"
   }
 };

@@ -29,6 +29,8 @@ export default class Home extends React.Component {
   }
 
   handleClick(){
+    let rect = this.container.getBoundingClientRect();
+    this.props.homeSelected(rect.top);
     ReactDOM.render(
       <ReactTransitionGroup style={CONSTANTS.appContainerStyle}>
         <MainPanel />
@@ -48,7 +50,7 @@ export default class Home extends React.Component {
            onMouseDown={this.handleMouseDown.bind(this)}
            onMouseUp={this.handleMouseUp.bind(this)}
            onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.handleClick}
+           onClick={this.handleClick.bind(this)}
            style={STYLE.container}>
         <img ref={image => this.image = image}
              src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />

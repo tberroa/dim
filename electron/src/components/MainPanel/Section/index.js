@@ -31,7 +31,7 @@ export default class Section extends React.Component {
 
   handleClick(){
     let rect = this.container.getBoundingClientRect();
-    this.props.updateSelected(rect.top);
+    this.props.sectionSelected(rect.top);
     ReactDOM.render(
       <ReactTransitionGroup style={CONSTANTS.appContainerStyle}>
         <MainPanel />

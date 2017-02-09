@@ -6,6 +6,7 @@ const STYLE = {
     textAlign: "center",
     cursor: "pointer",
     WebkitUserSelect: "none",
+    zIndex: "2",
     margin: "0px 0px 10px 0px",
     padding: "5px"
   },

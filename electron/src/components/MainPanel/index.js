@@ -5,7 +5,13 @@ import Window from "./Window/index";
 import STYLE from "./style";
 
 export default class MainPanel extends React.Component {
-  updateSelected(position){
+  homeSelected(position){
+    TweenMax.to(this.selected, 0.3, {opacity: 0});
+    TweenMax.to(this.selected, 0.3, {y: position-11});
+  }
+
+  sectionSelected(position){
+    TweenMax.to(this.selected, 0.3, {opacity: 1});
     TweenMax.to(this.selected, 0.3, {y: position-11});
   }
 
@@ -13,12 +19,12 @@ export default class MainPanel extends React.Component {
     return (
       <div style={STYLE.container}>
         <Window />
-        <Home />
-        <Section section="career" updateSelected={this.updateSelected.bind(this)} />
-        <Section section="finance" updateSelected={this.updateSelected.bind(this)} />
-        <Section section="health" updateSelected={this.updateSelected.bind(this)} />
-        <Section section="medical" updateSelected={this.updateSelected.bind(this)} />
-        <Section section="school" updateSelected={this.updateSelected.bind(this)} />
+        <Home homeSelected={this.homeSelected.bind(this)}/>
+        <Section section="career" sectionSelected={this.sectionSelected.bind(this)} />
+        <Section section="finance" sectionSelected={this.sectionSelected.bind(this)} />
+        <Section section="health" sectionSelected={this.sectionSelected.bind(this)} />
+        <Section section="medical" sectionSelected={this.sectionSelected.bind(this)} />
+        <Section section="school" sectionSelected={this.sectionSelected.bind(this)} />
         <div ref={selected => this.selected = selected} style={STYLE.selected} />
       </div>
     );

@@ -1,4 +1,5 @@
 import React from "react";
+import Add from "./Add/index";
 import Home from "./Home/index";
 import Section from "./Section/index";
 import Window from "./Window/index";
@@ -21,10 +22,7 @@ export default class MainPanel extends React.Component {
         <Window />
         <Home homeSelected={this.homeSelected.bind(this)}/>
         <Section section="career" sectionSelected={this.sectionSelected.bind(this)} />
-        <Section section="finance" sectionSelected={this.sectionSelected.bind(this)} />
-        <Section section="health" sectionSelected={this.sectionSelected.bind(this)} />
-        <Section section="medical" sectionSelected={this.sectionSelected.bind(this)} />
-        <Section section="school" sectionSelected={this.sectionSelected.bind(this)} />
+        <Add />
         <div ref={selected => this.selected = selected} style={STYLE.selected} />
       </div>
     );

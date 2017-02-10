@@ -4,12 +4,16 @@ const STYLE = {
     width: "65px",
     height: "65px",
     backgroundColor: "#E6D0ED",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: "10%",
     textAlign: "center",
     cursor: "pointer",
     WebkitUserSelect: "none",
     zIndex: "2",
-    padding: "8px 5px 5px 5px",
+    padding: "5px",
     margin: "12px"
   },
   image: {
@@ -17,7 +21,6 @@ const STYLE = {
     height: "40px",
     display: "block",
     WebkitUserSelect: "none",
-    margin: "auto"
   },
   text: {
     fontSize: "14px",

@@ -2,7 +2,7 @@
 Digital Information Management
 
 
-# Setting Up for Linux (Ubuntu) Development
+# Setting Up for Linux Development
 1. install git: sudo apt-get install git
 2. clone the repo: git clone https://github.com/tberroa/dim
 3. install curl: sudo apt-get install curl

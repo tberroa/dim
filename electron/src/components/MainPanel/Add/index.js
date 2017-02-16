@@ -33,15 +33,21 @@ export default class Add extends React.Component {
     const IMG_PATH = ROOT_PATH + "assets/add.png";
 
     return (
-      <div ref={container => this.container = container}
-           onMouseEnter={this.handleMouseEnter.bind(this)}
-           onMouseDown={this.handleMouseDown.bind(this)}
-           onMouseUp={this.handleMouseUp.bind(this)}
-           onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.handleClick.bind(this)}
-           style={STYLE.container}>
-        <img ref={image => this.image = image}
-             src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
+      <div
+        ref={container => this.container = container}
+        onMouseEnter={this.handleMouseEnter.bind(this)}
+        onMouseDown={this.handleMouseDown.bind(this)}
+        onMouseUp={this.handleMouseUp.bind(this)}
+        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onClick={this.handleClick.bind(this)}
+        style={STYLE.container}>
+
+        <img
+          ref={image => this.image = image}
+          src={IMG_PATH}
+          alt =""
+          draggable="false"
+          style={STYLE.image} />
       </div>
     );
   }

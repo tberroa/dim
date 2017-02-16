@@ -13,7 +13,7 @@ export default class MainPanel extends React.Component {
     let sections = SECTIONS.map((section) => {
       return ({
         name: section.name,
-        state: true
+        state: false
       });
     });
 

@@ -7,6 +7,19 @@ export const APP_CONTAINER_STYLE = {
   overflow: "hidden"
 };
 
+export const IMAGES = {
+  add: __dirname + "/images/add.png",
+  career: __dirname + "/images/career.png",
+  close: __dirname + "/images/close.png",
+  finance: __dirname + "/images/finance.png",
+  health: __dirname + "/images/health.png",
+  home: __dirname + "/images/home.png",
+  maximize: __dirname + "/images/maximize.png",
+  medical: __dirname + "/images/medical.png",
+  minimize: __dirname + "/images/minimize.png",
+  school: __dirname + "/images/school.png",
+}
+
 export const SECTIONS = [
   {
     name: "career",
@@ -16,7 +29,8 @@ export const SECTIONS = [
       "History",
       "References",
       "Documents"
-    ]
+    ],
+    image: IMAGES.career
   },
   {
     name: "finance",
@@ -30,7 +44,8 @@ export const SECTIONS = [
       "Bills",
       "Savings",
       "Documents"
-    ]
+    ],
+    image: IMAGES.finance
   },
   {
     name: "health",
@@ -43,7 +58,8 @@ export const SECTIONS = [
       "Groceries",
       "Recipes",
       "Steps"
-    ]
+    ],
+    image: IMAGES.health
   },
   {
     name: "medical",
@@ -54,7 +70,8 @@ export const SECTIONS = [
       "Insurance",
       "Reminders",
       "Documents"
-    ]
+    ],
+    image: IMAGES.medical
   },
   {
     name: "school",
@@ -64,6 +81,7 @@ export const SECTIONS = [
       "Deadlines",
       "Grades",
       "Documents"
-    ]
+    ],
+    image: IMAGES.school
   }
 ];

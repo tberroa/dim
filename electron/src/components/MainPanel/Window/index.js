@@ -1,6 +1,7 @@
 import {remote} from "electron";
 import React from "react";
 import Button from "./Button/index";
+import {IMAGES} from "../../../constants";
 import STYLE from "./style";
 
 export default class Window extends React.Component {
@@ -26,9 +27,9 @@ export default class Window extends React.Component {
   render() {
     return (
       <div style={STYLE.container}>
-        <Button type="close" handleClick={this.handleCloseClick} />
-        <Button type="minimize" handleClick={this.handleMinimizeClick} />
-        <Button type="maximize" handleClick={this.handleMaximizeClick} />
+        <Button image={IMAGES.close} color="red" handleClick={this.handleCloseClick} />
+        <Button image={IMAGES.minimize} color="yellow" handleClick={this.handleMinimizeClick} />
+        <Button image={IMAGES.maximize} color="green" handleClick={this.handleMaximizeClick} />
       </div>
     );
   }

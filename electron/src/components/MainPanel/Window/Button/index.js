@@ -26,19 +26,7 @@ export default class Button extends React.Component {
   }
 
   render() {
-    let containerStyle = STYLE.container;
-    let imagePath = "/home/tberroa/dim/electron/src/components/MainPanel/Window/Button/assets/";
-
-    if (this.props.type == "close"){
-      imagePath += "close.png";
-      containerStyle.backgroundColor = "red";
-    } else if (this.props.type == "minimize"){
-      imagePath += "minimize.png";
-      containerStyle.backgroundColor = "yellow";
-    } else if (this.props.type == "maximize"){
-      imagePath += "maximize.png";
-      containerStyle.backgroundColor = "green";
-    }
+    STYLE.container.backgroundColor = this.props.color;
 
     return (
       <div
@@ -48,11 +36,11 @@ export default class Button extends React.Component {
         onMouseUp={this.handleMouseUp.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}
         onClick={this.props.handleClick}
-        style={containerStyle}>
+        style={STYLE.container}>
 
         <img
           ref={image => this.image = image}
-          src={imagePath}
+          src={this.props.image}
           alt =""
           draggable="false"
           style={STYLE.image} />

@@ -5,6 +5,7 @@ import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
 import MainPanel from "../index";
 import {APP_CONTAINER_STYLE} from "../../../constants";
+import {IMAGES} from "../../../constants";
 import STYLE from "./style";
 
 export default class Home extends React.Component {
@@ -26,6 +27,7 @@ export default class Home extends React.Component {
 
   handleMouseLeave(){
     TweenMax.to(this.container, 0.2, {backgroundColor:"#E6D0ED"});
+    TweenMax.to(this.image, 0.1, {y: 0});
   }
 
   handleClick(){
@@ -41,9 +43,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Home/";
-    const IMG_PATH = ROOT_PATH + "assets/home.png";
-
     return (
       <div
         ref={container => this.container = container}
@@ -56,11 +55,11 @@ export default class Home extends React.Component {
 
         <img
           ref={image => this.image = image}
-          src={IMG_PATH}
+          src={IMAGES.home}
           alt =""
           draggable="false"
           style={STYLE.image} />
-          
+
         <div style={STYLE.text}>home</div>
       </div>
     );

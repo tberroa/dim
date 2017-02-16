@@ -27,6 +27,7 @@ export default class Section extends React.Component {
 
   handleMouseLeave(){
     TweenMax.to(this.container, 0.2, {backgroundColor:"#E6D0ED"});
+    TweenMax.to(this.image, 0.1, {y: 0});
   }
 
   handleClick(){
@@ -43,9 +44,6 @@ export default class Section extends React.Component {
   }
 
   render() {
-    const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Section/";
-    const IMG_PATH = ROOT_PATH + "assets/" + this.props.section.name + ".png";
-
     return (
       <div
         ref={container => this.container = container}
@@ -58,7 +56,7 @@ export default class Section extends React.Component {
 
         <img
           ref={image => this.image = image}
-          src={IMG_PATH}
+          src={this.props.section.image}
           alt =""
           draggable="false"
           style={STYLE.image} />

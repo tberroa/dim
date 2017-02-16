@@ -41,15 +41,21 @@ export default class Button extends React.Component {
     }
 
     return (
-      <div ref={container => this.container = container}
-           onMouseEnter={this.handleMouseEnter.bind(this)}
-           onMouseDown={this.handleMouseDown.bind(this)}
-           onMouseUp={this.handleMouseUp.bind(this)}
-           onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.props.handleClick}
-           style={containerStyle}>
-        <img ref={image => this.image = image}
-             src={imagePath} alt ="" draggable="false" style={STYLE.image} />
+      <div
+        ref={container => this.container = container}
+        onMouseEnter={this.handleMouseEnter.bind(this)}
+        onMouseDown={this.handleMouseDown.bind(this)}
+        onMouseUp={this.handleMouseUp.bind(this)}
+        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onClick={this.props.handleClick}
+        style={containerStyle}>
+
+        <img
+          ref={image => this.image = image}
+          src={imagePath}
+          alt =""
+          draggable="false"
+          style={STYLE.image} />
       </div>
     );
   }

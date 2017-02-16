@@ -1,21 +1,26 @@
-const CONSTANTS = {
-  appContainerStyle: {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "row",
-    backgroundColor: "#5B5681",
-    overflow: "hidden"
-  },
-  featureNames: {
-    career: [
+export const APP_CONTAINER_STYLE = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "row",
+  backgroundColor: "#5B5681",
+  overflow: "hidden"
+};
+
+export const SECTIONS = [
+  {
+    name: "career",
+    features: [
       "Applications",
       "Portfolio",
       "History",
       "References",
       "Documents"
-    ],
-    finance: [
+    ]
+  },
+  {
+    name: "finance",
+    features: [
       "Balances",
       "Transactions",
       "Budgets",
@@ -25,8 +30,11 @@ const CONSTANTS = {
       "Bills",
       "Savings",
       "Documents"
-    ],
-    health: [
+    ]
+  },
+  {
+    name: "health",
+    features: [
       "Progress",
       "Exercise",
       "Nutrition",
@@ -35,16 +43,22 @@ const CONSTANTS = {
       "Groceries",
       "Recipes",
       "Steps"
-    ],
-    medical: [
+    ]
+  },
+  {
+    name: "medical",
+    features: [
       "Appointments",
       "Medication",
       "Conditions",
       "Insurance",
       "Reminders",
       "Documents"
-    ],
-    school: [
+    ]
+  },
+  {
+    name: "school",
+    features: [
       "Schedule",
       "Classes",
       "Deadlines",
@@ -52,6 +66,4 @@ const CONSTANTS = {
       "Documents"
     ]
   }
-};
-
-export default CONSTANTS;
+];

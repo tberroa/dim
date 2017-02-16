@@ -16,7 +16,7 @@ export default class ContentArea extends React.Component {
   render() {
     return (
       <div ref={container => this.container = container} style={STYLE.container}>
-        {this.props.section} Content Area
+        Content Area
       </div>
     );
   }

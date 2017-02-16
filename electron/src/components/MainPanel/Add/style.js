@@ -1,14 +1,14 @@
 const STYLE = {
   container: {
     flex: "0 0 auto",
-    width: "65px",
-    height: "65px",
+    width: "50px",
+    height: "50px",
     backgroundColor: "#E6D0ED",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "10%",
+    borderRadius: "50%",
     textAlign: "center",
     cursor: "pointer",
     WebkitUserSelect: "none",
@@ -17,8 +17,8 @@ const STYLE = {
     margin: "12px"
   },
   image: {
-    width: "40px",
-    height: "40px",
+    width: "20px",
+    height: "20px",
     display: "block",
     WebkitUserSelect: "none",
   }

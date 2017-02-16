@@ -4,7 +4,7 @@ import ReactTransitionGroup from "react-addons-transition-group";
 import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
 import MainPanel from "../index";
-import CONSTANTS from "../../../constants";
+import {APP_CONTAINER_STYLE} from "../../../constants";
 import STYLE from "./style";
 
 export default class Home extends React.Component {
@@ -32,7 +32,7 @@ export default class Home extends React.Component {
     let rect = this.container.getBoundingClientRect();
     this.props.homeSelected(rect.top);
     ReactDOM.render(
-      <ReactTransitionGroup style={CONSTANTS.appContainerStyle}>
+      <ReactTransitionGroup style={APP_CONTAINER_STYLE}>
         <MainPanel />
         <ContentPanel />
       </ReactTransitionGroup>,
@@ -45,15 +45,22 @@ export default class Home extends React.Component {
     const IMG_PATH = ROOT_PATH + "assets/home.png";
 
     return (
-      <div ref={container => this.container = container}
-           onMouseEnter={this.handleMouseEnter.bind(this)}
-           onMouseDown={this.handleMouseDown.bind(this)}
-           onMouseUp={this.handleMouseUp.bind(this)}
-           onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.handleClick.bind(this)}
-           style={STYLE.container}>
-        <img ref={image => this.image = image}
-             src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
+      <div
+        ref={container => this.container = container}
+        onMouseEnter={this.handleMouseEnter.bind(this)}
+        onMouseDown={this.handleMouseDown.bind(this)}
+        onMouseUp={this.handleMouseUp.bind(this)}
+        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onClick={this.handleClick.bind(this)}
+        style={STYLE.container}>
+
+        <img
+          ref={image => this.image = image}
+          src={IMG_PATH}
+          alt =""
+          draggable="false"
+          style={STYLE.image} />
+          
         <div style={STYLE.text}>home</div>
       </div>
     );

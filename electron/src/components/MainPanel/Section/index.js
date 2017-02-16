@@ -5,7 +5,7 @@ import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
 import InfoPanel from "../../InfoPanel/index";
 import MainPanel from "../index";
-import CONSTANTS from "../../../constants";
+import {APP_CONTAINER_STYLE} from "../../../constants";
 import STYLE from "./style";
 
 export default class Section extends React.Component {
@@ -33,7 +33,7 @@ export default class Section extends React.Component {
     let rect = this.container.getBoundingClientRect();
     this.props.sectionSelected(rect.top);
     ReactDOM.render(
-      <ReactTransitionGroup style={CONSTANTS.appContainerStyle}>
+      <ReactTransitionGroup style={APP_CONTAINER_STYLE}>
         <MainPanel />
         <ContentPanel section={this.props.section} />
         <InfoPanel section={this.props.section} />
@@ -44,19 +44,28 @@ export default class Section extends React.Component {
 
   render() {
     const ROOT_PATH = "/home/tberroa/dim/electron/src/components/MainPanel/Section/";
-    const IMG_PATH = ROOT_PATH + "assets/" + this.props.section + ".png";
+    const IMG_PATH = ROOT_PATH + "assets/" + this.props.section.name + ".png";
 
     return (
-      <div ref={container => this.container = container}
-           onMouseEnter={this.handleMouseEnter.bind(this)}
-           onMouseDown={this.handleMouseDown.bind(this)}
-           onMouseUp={this.handleMouseUp.bind(this)}
-           onMouseLeave={this.handleMouseLeave.bind(this)}
-           onClick={this.handleClick.bind(this)}
-           style={STYLE.container}>
-        <img ref={image => this.image = image}
-             src={IMG_PATH} alt ="" draggable="false" style={STYLE.image} />
-        <div style={STYLE.text}>{this.props.section}</div>
+      <div
+        ref={container => this.container = container}
+        onMouseEnter={this.handleMouseEnter.bind(this)}
+        onMouseDown={this.handleMouseDown.bind(this)}
+        onMouseUp={this.handleMouseUp.bind(this)}
+        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onClick={this.handleClick.bind(this)}
+        style={STYLE.container}>
+
+        <img
+          ref={image => this.image = image}
+          src={IMG_PATH}
+          alt =""
+          draggable="false"
+          style={STYLE.image} />
+
+        <div style={STYLE.text}>
+          {this.props.section.name}
+        </div>
       </div>
     );
   }

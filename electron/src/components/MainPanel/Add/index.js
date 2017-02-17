@@ -30,9 +30,16 @@ export default class Add extends React.Component {
 
   handleClick(){
     let cards = this.props.sections.map((section) => {
-      return(
-        <Card key={section.name} image={section.image} description={section.description} />
-      );
+      if (!section.state){
+        return(
+          <Card
+            key={section.name}
+            section={section.name}
+            image={section.image}
+            description={section.description}
+            update={this.props.update} />
+        );
+      }
     });
 
     ReactDOM.render(

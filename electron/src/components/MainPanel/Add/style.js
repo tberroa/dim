@@ -24,7 +24,7 @@ const STYLE = {
   },
   dialog: {
     width: "550px",
-    height: "450px",
+    height: "400px",
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",

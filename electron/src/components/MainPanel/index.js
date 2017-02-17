@@ -1,5 +1,6 @@
 import React from "react";
 import Add from "./Add/index";
+import Dialog from "../Dialog/index";
 import Home from "./Home/index";
 import Section from "./Section/index";
 import Window from "./Window/index";
@@ -32,10 +33,20 @@ export default class MainPanel extends React.Component {
     TweenMax.to(this.selected, 0.3, {y: position-11});
   }
 
+  updateSection(section, state){
+    for (let i=0; i<this.state.sections.length; i++){
+      if (section == this.state.sections[i].name){
+        this.state.sections[i].state = state;
+        break;
+      }
+    }
+    this.setState({sections: this.state.sections});
+  }
+
   render() {
     let allSectionsShown = true;
 
-    let sections = SECTIONS.map((section, i) => {
+    let sectionButtons = SECTIONS.map((section, i) => {
       allSectionsShown = allSectionsShown && this.state.sections[i].state;
       if (this.state.sections[i].state){
         return (
@@ -46,14 +57,19 @@ export default class MainPanel extends React.Component {
         );
       }
     });
-    sections = sections.filter(Boolean);
+    sectionButtons = sectionButtons.filter(Boolean);
+
+    let sections = SECTIONS.map((section, i) => {
+      section.state = this.state.sections[i].state;
+      return (section);
+    });
 
     return (
       <div style={STYLE.container}>
         <Window />
         <Home homeSelected={this.homeSelected.bind(this)}/>
-        {sections}
-        {!allSectionsShown && <Add sections={SECTIONS} />}
+        {sectionButtons}
+        {!allSectionsShown && <Add sections={sections} update={this.updateSection.bind(this)}/>}
         <div ref={selected => this.selected = selected} style={STYLE.selected} />
       </div>
     );

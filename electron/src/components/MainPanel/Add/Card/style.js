@@ -10,6 +10,7 @@ const STYLE = {
     alignItems: "center",
     textAlign: "center",
     borderRadius: "10%",
+    cursor: "pointer",
     WebkitUserSelect: "none",
     padding: "8px",
     margin: "5px"
@@ -24,7 +25,6 @@ const STYLE = {
   text: {
     fontSize: "14px",
     color: "#393958",
-    cursor: "default",
     WebkitUserSelect: "none"
   }
 };

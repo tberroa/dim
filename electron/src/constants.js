@@ -30,7 +30,8 @@ export const SECTIONS = [
       "References",
       "Documents"
     ],
-    image: IMAGES.career
+    image: IMAGES.career,
+    description: "Anything related to advancing your path to success."
   },
   {
     name: "finance",
@@ -45,7 +46,8 @@ export const SECTIONS = [
       "Savings",
       "Documents"
     ],
-    image: IMAGES.finance
+    image: IMAGES.finance,
+    description: "Tracking money is annoying, let us make it easy for you."
   },
   {
     name: "health",
@@ -59,7 +61,8 @@ export const SECTIONS = [
       "Recipes",
       "Steps"
     ],
-    image: IMAGES.health
+    image: IMAGES.health,
+    description: "A storage bucket for all your health data."
   },
   {
     name: "medical",
@@ -71,7 +74,8 @@ export const SECTIONS = [
       "Reminders",
       "Documents"
     ],
-    image: IMAGES.medical
+    image: IMAGES.medical,
+    description: "No more needing to memorize your medication or insurance details."
   },
   {
     name: "school",
@@ -82,6 +86,7 @@ export const SECTIONS = [
       "Grades",
       "Documents"
     ],
-    image: IMAGES.school
+    image: IMAGES.school,
+    description: "School is hard, managing it shouldn't have to be as well."
   }
 ];

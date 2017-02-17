@@ -53,7 +53,7 @@ export default class MainPanel extends React.Component {
         <Window />
         <Home homeSelected={this.homeSelected.bind(this)}/>
         {sections}
-        {!allSectionsShown && <Add />}
+        {!allSectionsShown && <Add sections={SECTIONS} />}
         <div ref={selected => this.selected = selected} style={STYLE.selected} />
       </div>
     );

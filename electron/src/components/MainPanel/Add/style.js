@@ -21,6 +21,18 @@ const STYLE = {
     height: "20px",
     display: "block",
     WebkitUserSelect: "none",
+  },
+  dialog: {
+    width: "550px",
+    height: "450px",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "5%",
+    backgroundColor: "#393958",
+    padding: "10px"
   }
 };
 

@@ -1,5 +1,8 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import TweenMax from "gsap";
+import Card from "./Card/index";
+import Dialog from "../../Dialog/index";
 import {IMAGES} from "../../../constants";
 import STYLE from "./style";
 
@@ -26,7 +29,16 @@ export default class Add extends React.Component {
   }
 
   handleClick(){
+    let cards = this.props.sections.map((section) => {
+      return(
+        <Card key={section.name} image={section.image} description={section.description} />
+      );
+    });
 
+    ReactDOM.render(
+      <Dialog content={cards} style={STYLE.dialog} />,
+      document.getElementById("dialog")
+    );
   }
 
   render() {

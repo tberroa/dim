@@ -1,37 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactTransitionGroup from "react-addons-transition-group";
-import TweenMax from "gsap";
 import ContentPanel from "../../ContentPanel/index";
+import GrowButton from "../../GrowButton/index";
 import MainPanel from "../index";
 import {APP_CONTAINER_STYLE} from "../../../constants";
 import {IMAGES} from "../../../constants";
 import STYLE from "./style";
 
 export default class Home extends React.Component {
-  handleMouseEnter(){
-    TweenMax.to(this.container, 0.2, {backgroundColor:"#C1B7FF"});
-    TweenMax.to(this.image, 0.2, {scale: 1.2, ease: Bounce});
-    TweenMax.to(this.image, 0.2, {scale: 1, delay: 0.2});
-  }
-
-  handleMouseDown(){
-    TweenMax.to(this.container, 0.1, {backgroundColor:"#9689ED"});
-    TweenMax.to(this.image, 0.1, {y: 2});
-  }
-
-  handleMouseUp(){
-    TweenMax.to(this.container, 0.1, {backgroundColor:"#C1B7FF"});
-    TweenMax.to(this.image, 0.1, {y: 0});
-  }
-
-  handleMouseLeave(){
-    TweenMax.to(this.container, 0.2, {backgroundColor:"#E6D0ED"});
-    TweenMax.to(this.image, 0.1, {y: 0});
-  }
-
-  handleClick(){
-    let rect = this.container.getBoundingClientRect();
+  handleClick(container){
+    let rect = container.getBoundingClientRect();
     this.props.homeSelected(rect.top);
     ReactDOM.render(
       <ReactTransitionGroup style={APP_CONTAINER_STYLE}>
@@ -43,25 +22,15 @@ export default class Home extends React.Component {
   }
 
   render() {
+    let image = <img src={IMAGES.home} draggable="false" style={STYLE.image} />
+    let text = <div style={STYLE.text}>home</div>
+
     return (
-      <div
-        ref={container => this.container = container}
-        onMouseEnter={this.handleMouseEnter.bind(this)}
-        onMouseDown={this.handleMouseDown.bind(this)}
-        onMouseUp={this.handleMouseUp.bind(this)}
-        onMouseLeave={this.handleMouseLeave.bind(this)}
-        onClick={this.handleClick.bind(this)}
-        style={STYLE.container}>
-
-        <img
-          ref={image => this.image = image}
-          src={IMAGES.home}
-          alt =""
-          draggable="false"
-          style={STYLE.image} />
-
-        <div style={STYLE.text}>home</div>
-      </div>
+      <GrowButton
+        image={image}
+        text={text}
+        handleClick={this.handleClick.bind(this)}
+        style={STYLE.container} />
     );
   }
 }
